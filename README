@@ -1,0 +1,32 @@
+# About
+
+Linenoise is a small self-contained alternative to readline and
+libedit written by Salvatore Sanfilippo. It can be found at
+http://http://github.com/antirez/linenoise
+
+This was a set of R6RS Scheme bindings for it to test out (ucl ffi) by
+Will Donnelly. http://http://github.com/willdonnelly/ucl-ffi
+
+
+# Install
+
+A Makefile is included for building and installing a shared library
+version of Linenoise. A simple `make && sudo make install` should
+suffice if /usr/local/lib is on your LD_LIBRARY_PATH.
+
+linenoise.sls and linenoise/main.sls will need to be placed in the
+library path for your scheme.
+
+This library was tested with Ikarus 0.04-rc1+, Ypsilon 0.9.6-trunk/r503,
+Mosh 0.2.5, and the plt-r6rs executable of Racket v5.0.
+
+It's only dependency is ucl-ffi by Will Donnelly
+
+
+# Possible Improvements
+
+- Write a MANIFEST for use with (ucl install)
+- Add srfi 39 parameters for current-linenoise-prompt and
+  current-history-file and let history-save!/history-load!/linenoise
+  take either 0 or 1 parameters.
+- Allow arguments to be bytevectors?
